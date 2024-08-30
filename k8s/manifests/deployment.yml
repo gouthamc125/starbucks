@@ -1,0 +1,22 @@
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: starbucksapp-deployment
+  labels:
+    app: starbucksapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: starbucksapp
+  template:
+    metadata:
+      labels:
+        app: starbucksapp
+    spec:
+      containers:
+      - name: starbucksapp
+        image: gouthamc125/starbucks:v1
+        ports:
+        - containerPort: 3000

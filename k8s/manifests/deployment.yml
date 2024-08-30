@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: starbucksapp
-        image: gouthamc125/starbucks:v1
+        image: gouthamc125/starbucks:{{ .Values.image.tag }}
         ports:
         - containerPort: 3000

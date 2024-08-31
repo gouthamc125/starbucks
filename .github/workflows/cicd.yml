@@ -29,6 +29,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Browser List Updated
+        run:  npx update-browserslist-db@latest
+
       - name: Build the app
         run: npm run build
 

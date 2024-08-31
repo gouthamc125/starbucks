@@ -8,6 +8,8 @@ on:
     branches:
       - main
     paths-ignore:
+      - 'k8s/**'
+      - 'starbucks-chart'
       - 'README.md'
 
 jobs:
@@ -17,11 +19,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Install Dependencies
-      uses: npm install 
     
-    - name: Build the Code
-      uses: npm build
-    
-    
+    - name: Install Nodejs
+      uses: actions/set-node@v4
+      with:
+        node-version: 20

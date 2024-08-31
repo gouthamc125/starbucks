@@ -71,7 +71,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/starbucks:${{ github.run_id }}
 
   update-new-tag-in-hel-chart:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
 
     needs: push
     

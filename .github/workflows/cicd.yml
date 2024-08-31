@@ -19,8 +19,3 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-    
-    - name: Install Nodejs
-      uses: actions/set-node@v4
-      with:
-        node-version: 20

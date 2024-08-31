@@ -3,20 +3,20 @@
 name: CI/CD
 
 #Exclude the workflow to run on changes on helm chart
-on: 
+on:
   push:
     branches:
       - main
     paths-ignore:
+      - 'starbucks-chart/**'
       - 'k8s/**'
-      - 'starbucks-chart'
       - 'README.md'
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4

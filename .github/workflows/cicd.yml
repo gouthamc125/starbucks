@@ -70,5 +70,27 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/starbucks:${{ github.run_id }}
 
+  update-new-tag-in-hel-chart:
+    runs-on: ubuntu
+
+    needs: push
+    
+    steps: 
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.TOKEN }}
+    
+    - name: Update tag in helm chart
+      run: |
+        sed -i 's/tag: .*/tag: "${{ github.run_id }}"/' starbucks-chart/values.yaml
+      
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "goutham"
+        git config --global user.email "goutham@gmail.com"
+        git add starbucks-chart/values.yaml
+        git commit -m "feat: New Docker image tag updated"
+        git push origin development
 
       

@@ -6,7 +6,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - main
+      - development
     paths-ignore:
       - 'starbucks-chart/**'
       - 'k8s/**'

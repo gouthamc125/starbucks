@@ -8,7 +8,7 @@ image:
   repository: gouthamc125/starbucks
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "10648160068"
+  tag: "10648170752"
 
 ingress:
   enabled: false

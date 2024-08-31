@@ -30,7 +30,7 @@ jobs:
         run: npm install
 
       - name: Build the app
-        run: npm run build
+        run: npm build
 
   push:
     runs-on: ubuntu-latest
